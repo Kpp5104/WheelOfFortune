@@ -27,32 +27,28 @@ public class WheelOfFortune {
     if (numIn == 1){
         int spinNum = random.nextInt(50);
         System.out.println("You have spined wheel and got " + spinNum);
-        System.out.println("Enter a letter (except vowels): ");
+        System.out.println("Enter a letter: ");
         String letter = scan.next();
         char c1 = letter.charAt(0);
         char uc1 = Character.toUpperCase(c1);
-   
         if (uc1 >= 'A' && uc1 <= 'Z'){
         System.out.println("You entered: " + uc1);
         }
         else
-        System.out.print("Input error");
+        System.out.println("Input error");
     }
-        
     else if (numIn == 2){
-        System.out.print("Enter a Vowel: A, E, I, O, U");
+        System.out.println("Enter a Vowel: A, E, I, O, U");
     }
     else if (numIn == 3){
-       System.out.print("You want to solve the puzzle");
+       System.out.println("You want to solve the puzzle");
     }
     else if (numIn == 4){
        System.out.println("Quit");
        System.exit(0);
     }
     else{
-        System.out.print("Invalid input");
-       
+        System.out.println("Invalid input");
     }
   }
-  
 }
