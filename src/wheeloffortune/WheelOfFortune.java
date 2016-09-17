@@ -24,7 +24,8 @@ public class WheelOfFortune {
     int numIn = scan.nextInt();
     System.out.println("You have enterd: " + numIn);
     
-    if (numIn == 1){
+    switch (numIn){
+    case 1:
         int spinNum = random.nextInt(50);
         System.out.println("You have spined wheel and got " + spinNum);
         System.out.println("Enter a letter: ");
@@ -36,19 +37,24 @@ public class WheelOfFortune {
         }
         else
         System.out.println("Input error");
-    }
-    else if (numIn == 2){
+        break;
+    
+    case 2:
         System.out.println("Enter a Vowel: A, E, I, O, U");
-    }
-    else if (numIn == 3){
+    break;
+        
+    case 3:
        System.out.println("You want to solve the puzzle");
-    }
-    else if (numIn == 4){
+    break;
+        
+    case 4:
        System.out.println("Quit");
        System.exit(0);
-    }
-    else{
+    break;
+        
+    default:
         System.out.println("Invalid input");
-    }
+    
+}
   }
 }
