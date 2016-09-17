@@ -23,17 +23,19 @@ public class WheelOfFortune {
     System.out.println("Enter Number: ");
     int numIn = scan.nextInt();
     System.out.println("You have enterd: " + numIn);
+
     
     switch (numIn){
     case 1:
+
         int spinNum = random.nextInt(50);
         System.out.println("You have spined wheel and got " + spinNum);
         System.out.println("Enter a letter: ");
-        String letter = scan.next();
+        String letter = scan.next().toUpperCase();
         char c1 = letter.charAt(0);
-        char uc1 = Character.toUpperCase(c1);
-        if (uc1 >= 'A' && uc1 <= 'Z'){
-        System.out.println("You entered: " + uc1);
+ 
+        if (c1 >= 'A' && c1 <= 'Z'){
+        System.out.println("You entered: " + c1);
         }
         else
         System.out.println("Input error");
