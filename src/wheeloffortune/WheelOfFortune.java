@@ -60,6 +60,6 @@ public class WheelOfFortune {
     default:
         System.out.println("Invalid input");
     
-}
+    }
   }
 }
