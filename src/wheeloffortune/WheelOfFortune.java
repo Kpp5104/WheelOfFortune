@@ -17,7 +17,6 @@ public class WheelOfFortune {
    
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    Random random = new Random(); 
    
     System.out.println("Spint the wheel: 1, Buy a vowel: 2, Solve the puzzle: 3, Quit the game: 4, Test: 5 ");
     System.out.println("Enter Number: ");
@@ -28,24 +27,11 @@ public class WheelOfFortune {
     switch (numIn){
     case 1:
 
-        int spinNum = random.nextInt(50);
-        System.out.println("You have spined wheel and got " + spinNum);
-        System.out.println("Enter a letter: ");
-        String letter = scan.next().toUpperCase();
-        char c1 = letter.charAt(0);
- 
-        if (c1 >= 'A' && c1 <= 'Z'){
-        System.out.println("You entered: " + c1);
-        }
-        else
-        System.out.println("Input error");
+        System.out.println("You have spined wheel ");
     break;
     
     case 2:
-        System.out.println("Enter a Vowel: A, E, I, O, U");
-        String vlet = scan.next().toUpperCase();
-        char v1 = vlet.charAt(0);
-        System.out.println("You have entered: " + v1);
+        System.out.println("Enter a Vowel ");
     break;
         
     case 3:
@@ -62,7 +48,6 @@ public class WheelOfFortune {
         System.out.println("Enter a letter: ");
         String let = scan.next().toUpperCase();
         char c2 = let.charAt(0);
- 
         if (c2 >= 'A' && c2 <= 'Z'){
         System.out.println("You entered: " + c2 + " it is a letter");
         }
@@ -71,7 +56,7 @@ public class WheelOfFortune {
     break;
         
     default:
-        System.out.println("Invalid input");
+        System.out.println("Entry not valid, pleas try again later");
     
     }
   }
