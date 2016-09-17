@@ -43,6 +43,9 @@ public class WheelOfFortune {
     
     case 2:
         System.out.println("Enter a Vowel: A, E, I, O, U");
+        String vlet = scan.next().toUpperCase();
+        char v1 = vlet.charAt(0);
+        System.out.println("You have entered: " + v1);
     break;
         
     case 3:
