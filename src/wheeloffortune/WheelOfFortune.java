@@ -73,8 +73,8 @@ public class WheelOfFortune {
 
     switch (numIn){
     case 1:
-
-        System.out.println("You have spined wheel and landed on: "  );
+        Object spin = wheel.get(new Random().nextInt(wheel.size()));
+        System.out.println("You have spined wheel and landed on: " + spin );
         System.out.print("Enter a letter: ");
         String letIn = scan.next().toUpperCase();
         char c1 = letIn.charAt(0);
