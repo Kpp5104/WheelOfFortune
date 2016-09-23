@@ -64,7 +64,7 @@ public class WheelOfFortune {
           else{
               System.out.print(letter);
             }
- 
+      
         }
     System.out.println("\n\n1 Spint the wheel \n2 Buy a vowel\n3 Solve the puzzle \n4 Quit the game\n9 Test \n");
     System.out.print("Enter Number: ");
@@ -74,17 +74,18 @@ public class WheelOfFortune {
     switch (numIn){
     case 1:
 
-        System.out.println("You have spined wheel and landed on: ");
+        System.out.println("You have spined wheel and landed on: "  );
         System.out.print("Enter a letter: ");
-        String letterIn = scan.next().toUpperCase();
-        char c1 = letterIn.charAt(0);
+        String letIn = scan.next().toUpperCase();
+        char c1 = letIn.charAt(0);
         if (c1 >= 'A' && c1 <= 'Z'){
-        System.out.println("You have enter: " + letterIn);
+        System.out.println("You have enter: " + letIn);
+        entry += letIn;
         }
-
-
+        else
+            System.out.print("Not a letter try again");
         
-    break;
+      break;
     
     case 2:
         System.out.println("Enter a Vowel ");
