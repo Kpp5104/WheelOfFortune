@@ -54,7 +54,12 @@ public class WheelOfFortune {
     
       for (char letter : ans.toCharArray()){
           if (entry.indexOf(letter)==-1){
-          System.out.print("-");
+              if (letter >= 'A' && letter <= 'Z'){
+          System.out.print("_ ");
+              }
+              else{
+                  System.out.print("  ");
+              }
           }
           else{
               System.out.print(letter);
@@ -95,6 +100,7 @@ public class WheelOfFortune {
     break;
         
     case 9:
+        
         System.out.println("Test letter input");
         System.out.println("Enter a letter: ");
         String let = scan.next().toUpperCase();
@@ -102,8 +108,14 @@ public class WheelOfFortune {
         if (c2 >= 'A' && c2 <= 'Z'){
         System.out.println("You entered: " + c2 + " it is a letter");
         }
-        else
+        else if (c2 == '4'){
+            System.out.println("Quit");
+            System.exit(0);
+        }
+        else{
         System.out.println("You entered: " + c2 + " it is not a letter");
+        }
+        
     break;
         
     default:
