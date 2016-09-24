@@ -11,15 +11,17 @@ import java.util.*;
 
 public class WheelOfFortune {
 
-  /**
-   * @param args the command line arguments
-   */
-   
-  public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
-    String ans = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
-    String entry = "";
-    ArrayList wheel = new ArrayList();
+    public static String ans = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG";
+    public static String entry = "";
+    public static Scanner scan = new Scanner(System.in);
+    /**
+     *
+     */
+    public static ArrayList wheel = new ArrayList();
+    
+    
+    public static void main(String[] args) {
+
     wheel.add("5000");
     wheel.add("600");
     wheel.add("500");
@@ -46,13 +48,50 @@ public class WheelOfFortune {
     wheel.add("600");
         
     while (true){
-    System.out.println("\n");
-    System.out.println("                     =                           =");
-    System.out.println("                     =      Wheel Of Fortune     =");
-    System.out.println("                     =                           =");
-    System.out.println("\n\n");
+
+        title();
+        mask();
     
-      for (char letter : ans.toCharArray()){
+        System.out.println("\n\n1. Spint the wheel \n2. Buy a vowel\n"
+                + "3. Solve the puzzle \n4. Quit "
+                + "\n8. Toggle puzzle reveal \n9. Test letter input \n");
+        System.out.print("Enter choice: ");
+        int numIn = scan.nextInt();
+
+    switch (numIn){
+ 
+        case 1:
+            choicenum1 ();
+        break;
+    
+        case 2:
+            System.out.println("comming soon...");
+        break;
+        
+        case 3:
+           System.out.println("comming soon..");
+        break;
+        
+        case 4:
+            System.out.println("Quit");
+            System.exit(0);
+        break;
+        
+        case 8:
+             choicenum8();
+         break;
+        
+         case 9:
+            choicenum9 ();
+        break;
+        
+    default:
+            System.out.println("Entry not valid, pleas try again later");
+        }
+    }
+}
+    public static void mask (){
+        for (char letter : ans.toCharArray()){
           if (entry.indexOf(letter)==-1){
               if (letter >= 'A' && letter <= 'Z'){
           System.out.print("_ ");
@@ -66,63 +105,49 @@ public class WheelOfFortune {
             }
       
         }
-    System.out.println("\n\n1 Spint the wheel \n2 Buy a vowel\n3 Solve the puzzle \n4 Quit the game\n9 Test \n");
-    System.out.print("Enter Number: ");
-    int numIn = scan.nextInt();
-    System.out.println("You have enterd: " + numIn);
-
-    switch (numIn){
-    case 1:
+    }
+    public static void title(){
+        
+        System.out.println("\n");
+        System.out.println("                     ======================");
+        System.out.println("                     =  Wheel Of Fortune  =");
+        System.out.println("                     ======================");
+        System.out.println("\n");
+    }
+    
+    public static void choicenum1 (){
         Object spin = wheel.get(new Random().nextInt(wheel.size()));
         System.out.println("You have spined wheel and landed on: " + spin );
         System.out.print("Enter a letter: ");
         String letIn = scan.next().toUpperCase();
         char c1 = letIn.charAt(0);
         if (c1 >= 'A' && c1 <= 'Z'){
-        System.out.println("You have enter: " + letIn);
-        entry += letIn;
+            System.out.println("You have enter: " + letIn);
+            entry += letIn;
         }
         else
             System.out.print("Not a letter try again");
-        
-      break;
-    
-    case 2:
-        System.out.println("Enter a Vowel ");
-    break;
-        
-    case 3:
-       System.out.println("You want to solve the puzzle");
-    break;
-        
-    case 4:
-       System.out.println("Quit");
-       System.exit(0);
-    break;
-        
-    case 9:
+    }
+
+    public static void choicenum8(){
+            
+    }
+    public static void choicenum9 (){
         
         System.out.println("Test letter input");
         System.out.println("Enter a letter: ");
         String let = scan.next().toUpperCase();
         char c2 = let.charAt(0);
         if (c2 >= 'A' && c2 <= 'Z'){
-        System.out.println("You entered: " + c2 + " it is a letter");
+            System.out.println("You entered: " + c2 + " it is a letter");
         }
-        else if (c2 == '4'){
+        else if (c2 == '4')
+        {
             System.out.println("Quit");
             System.exit(0);
         }
         else{
-        System.out.println("You entered: " + c2 + " it is not a letter");
+            System.out.println("You entered: " + c2 + " it is not a letter");
         }
-        
-    break;
-        
-    default:
-        System.out.println("Entry not valid, pleas try again later");
-    
     }
-    }
-  }
 }
