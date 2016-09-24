@@ -60,7 +60,7 @@ public class WheelOfFortune {
         System.out.print("Enter choice: ");
         numIn = scan.nextInt();// user input menu choice 
        
-    switch (numIn){
+    switch (numIn){// switch case based on user input (numIn)
  
         case 1:
             choicenum1 ();
