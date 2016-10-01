@@ -241,7 +241,26 @@ public class WheelOfFortune {
                 System.out.println("You can only buy vowels here, try again");
             }
         case 3:
-        }
+            
+            while (true){
+            
+            System.out.println("You are in solve the puzzle mode");
+             gletters = inputLetter();
+            for(int i=0;i<puzzle.length();i++) {
+                if(gletters==puzzle.charAt(i)){
+
+                guessedLetters.put(gletters, true);
+                
+                }
+                else{
+                wins = 0;
+                System.out.println("You lost the game, start new game");
+                System.exit(0);
+                
+                 }
+            }
+    }
+      }
     }
 }
   /**
