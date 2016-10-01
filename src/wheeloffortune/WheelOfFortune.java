@@ -230,10 +230,10 @@ public class WheelOfFortune {
         case 2: // buy vowels
             vletter = inputLetter();
             if (vletter == 'A' || vletter == 'E' || vletter =='I' || vletter == 'O' || vletter == 'U'){
-                if (wins >= 250){
-                    wins = wins - 250;
-                    System.out.println("Buy a Vowel: " + vletter);
-                    guessedLetters.put(vletter, true);
+                if (wins >= 250){//check if the player has $250
+                    wins = wins - 250;// subtract 250 when player selects a vowel
+                    System.out.println("Buy a Vowel: " + vletter);//
+                    guessedLetters.put(vletter, true);// add vowel to main puzzle
                 }
                 else{
                     System.out.println("Need more money to buy a vowel, they cose $250");
@@ -243,16 +243,22 @@ public class WheelOfFortune {
                 System.out.println("You can only buy vowels here, try again");
             }
         case 3:
-            gletters = inputLetter();
-              char[]stringToCharArray = puzzle.toCharArray();             
+            gletters = inputLetter();//letter input
+              char[]stringToCharArray = puzzle.toCharArray();       // convert string to char array      
 
             System.out.println("You are in solve the puzzle mode");
         
-                while (Arrays.asList(stringToCharArray).contains(gletters)){
-
-                guessedLetters.put(gletters, true);//
+                if (Arrays.asList(stringToCharArray).contains(gletters)){//check to see if the array contains input letter
+                     System.out.println("You have enter: " + gletters);
+                guessedLetters.put(gletters, true);//added to main puzzle
+                
+                    
                   
             }
+                else{
+                    wins = 0;// set wins to 0
+                    System.out.println("You lost the game, try again");
+                }
 
         }
     }
