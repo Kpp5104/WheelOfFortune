@@ -51,10 +51,11 @@ public class WheelOfFortune {
   * We can cache the value so we're not calling .size() over and over
   */
   private static final int _wedgeCount = _wedges.size();
+  
   private static char letter;
   private static char vletter;
-  private static char gletters;
-  private static int wins = 0;
+  private static char gletters;//guessed letter
+  private static int wins = 0;//winnings
   private static String chooseRandomWedgeValue() {
     // Choose a random index
     int randomWedgeIndex = _random.nextInt(_wedgeCount);
@@ -98,6 +99,7 @@ public class WheelOfFortune {
   * Just the fact that a letter appears in the map as a key, is enough to imply
   * it was guessed.
   */
+  
   private static Map<Character, Boolean> guessedLetters = new HashMap<>();
   /*
   * Given a puzzle, return a masked version, with hidden letters
@@ -241,28 +243,22 @@ public class WheelOfFortune {
                 System.out.println("You can only buy vowels here, try again");
             }
         case 3:
-            
-            while (true){
-            
-            System.out.println("You are in solve the puzzle mode");
-             gletters = inputLetter();
-            for(int i=0;i<puzzle.length();i++) {
-                if(gletters==puzzle.charAt(i)){
+            gletters = inputLetter();
+              char[]stringToCharArray = puzzle.toCharArray();             
 
-                guessedLetters.put(gletters, true);
-                
-                }
-                else{
-                wins = 0;
-                System.out.println("You lost the game, start new game");
-                System.exit(0);
-                
-                 }
+            System.out.println("You are in solve the puzzle mode");
+        
+                while (Arrays.asList(stringToCharArray).contains(gletters)){
+
+                guessedLetters.put(gletters, true);//
+                  
             }
+
+        }
     }
-      }
-    }
-}
+  }
+
+
   /**
    * @param args the command line arguments
    */
